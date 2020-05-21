@@ -1,6 +1,6 @@
 #THESE TWO ARE OPTIONAL IF THE STANDARD RUNNING DOESN'T SUIT YOUR NEEDS
 #CUSTOM_MAKEMC=use-this-script-instead
-CUSTOM_GCONTROL=<npp_elton_dir>/originals/jobs/Gcontrol_cpp.in
+CUSTOM_GCONTROL=<npp_analysis_dir>/originals/jobs/Gcontrol_cpp.in
 #========================================================================
 
 TAG=<tag>
@@ -10,7 +10,7 @@ DATA_OUTPUT_BASE_DIR=<output_dir> #your desired output location
 NCORES=4      # Number of CPU threads to use or nodes:node-id:ppn or nodes:ppn depending on your system
  
 GENERATOR=gen_2pi0_primakoff    #or you may specifile file:/.../file-to-use
-GENERATOR_CONFIG=<npp_elton_dir>/gen_config/<generator_config_file>   #use full path, needed by SWIF
+GENERATOR_CONFIG=<npp_analysis_dir>/gen_config/<generator_config_file>   #use full path, needed by SWIF
 # For the osc use >scosg16 and /osgpool/halld/elton. Look under tbritton for examples
 # use command-line argument base_file_number=xx to file numbering at xx
 
@@ -40,7 +40,7 @@ BKG=TagOnly:0.0117 #[None, BeamPhotons, TagOnly, custom e.g bg.hddm:1.8] Can be 
 #Also see the calculational tool at http://zeus.phys.uconn.edu/halld/cobrems/ratetool.cgi
 
 #optional additional plugins that will be run along side danarest and hd_root.  This should be a comma separated list (e.g. plugin1,plugin2)
-CUSTOM_PLUGINS=file:<npp_elton_dir>/originals/gen_2pi0_primakoff/jana_Z2pi_trees.config #monitoring_hists,Z2pi_trees        #or file:/.../file-to-use which is a configuration file for jana/hd_root 
+CUSTOM_PLUGINS=file:<npp_analysis_dir>/originals/gen_2pi0_primakoff/jana_Z2pi_trees.config #monitoring_hists,Z2pi_trees        #or file:/.../file-to-use which is a configuration file for jana/hd_root 
 #====================================================================================
 #EVERYTHING BELOW FOR BATCH ONLY
 
@@ -49,7 +49,7 @@ CUSTOM_PLUGINS=file:<npp_elton_dir>/originals/gen_2pi0_primakoff/jana_Z2pi_trees
 BATCH_SYSTEM=swif                          #can be swif or qsub
 
 #environment file location
-ENVIRONMENT_FILE=<npp_elton_dir>/originals/home_elton/MC_environment.csh     #change this to your own environment file
+ENVIRONMENT_FILE=<npp_analysis_dir>/originals/home_elton/MC_environment.csh     #change this to your own environment file
 
 WORKFLOW_NAME=workflow     #SWIF WORKFLOW NAME
 PROJECT = gluex            # http://scicomp.jlab.org/scicomp/#/projects

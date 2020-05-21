@@ -12,7 +12,7 @@ git clone https://github.com/jeffersonlab/npp_analysis
 ### 2) To setup the environment
 
 ```
-setenv NPP /home/username/npp_elton
+setenv NPP /home/username/npp_analysis
 source $NPP/setup
 ```
 
@@ -27,7 +27,7 @@ cp $NPP/standard.nppcfg my.nppcfg
 Edit my.nppcfg to indicate your preferences.
 * number_of_events: number of events to generate for each of signal and phase space
 * mc_outout_dir: directory where MCwrapper should put its output
-* npp_elton_dir: the directory defined as $NPP above
+* npp_analysis_dir: the directory defined as $NPP above
 * generator_config_file_phase_space: name of file in $NPP_gen_config for generating phase space events
 * generator_config_file_signal: name of file in $NPP/gen_config for generating signal events
 

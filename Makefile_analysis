@@ -33,7 +33,7 @@ info:
 
 check:
 	@echo checking if NPP agrees with config file
-	@test $(NPP) = $(NPP_ELTON_DIR)
+	@test $(NPP) = $(NPP_ANALYSIS_DIR)
 
 dsplots: DSelector_Z2pi0_trees_sig.pdf DSelector_Z2pi0_trees_ps.pdf
 #
