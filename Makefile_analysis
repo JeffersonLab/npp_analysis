@@ -11,9 +11,9 @@ FLAT_MACROS = call_MakeAmpToolsFlat_pi0.C MakeAmpToolsFlat_pi0.C MakeAmpToolsFla
 PHASE_SPACE_EVENT_MACROS = call_MakeAmpToolsFlat_mcthrown_pi0.C MakeAmpToolsFlat_mcthrown_pi0.C MakeAmpToolsFlat_mcthrown_pi0.h
 
 #MC_OUTPUT_DIR = ..
-INPUT_TREES_SIG = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_gen_2pi0_primakoff_sig_030300_*.root)
-INPUT_TREES_PS = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_gen_2pi0_primakoff_ps_030300_*.root)
-MC_HDDM_FILES = $(wildcard $(MC_OUTPUT_DIR)/hddm/dana_rest_gen_2pi0_primakoff_ps_030300_*.hddm)
+INPUT_TREES_SIG = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_gen_2pi0_primakoff_sig_*$(RUN)_*.root)
+INPUT_TREES_PS = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_gen_2pi0_primakoff_ps_*$(RUN)_*.root)
+MC_HDDM_FILES = $(wildcard $(MC_OUTPUT_DIR)/hddm/dana_rest_gen_2pi0_primakoff_ps_*$(RUN)_*.hddm)
 TOTAL_EVENTS = $(EVENTS)
 PWD := $(shell pwd)
 #
