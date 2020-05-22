@@ -34,7 +34,9 @@ VARIATION=mc_cpp
 # RECON_CALIBTIME=
 
 GEANT_VERSION=4
-BKG=TagOnly:0.0117 #[None, BeamPhotons, TagOnly, custom e.g bg.hddm:1.8] Can be stacked eg Random+TagOnly:.123 where the :[num] defines BGRATE
+
+BKG=Random:recon-2017_01-ver03
+# BKG=TagOnly:0.0117 #[None, BeamPhotons, TagOnly, custom e.g bg.hddm:1.8] Can be stacked eg Random+TagOnly:.123 where the :[num] defines BGRATE
 # BKG=TagOnly:0.0117 nominal #[None, BeamPhotons, TagOnly, custom e.g bg.hddm:1.8] Can be stacked eg Random+TagOnly:.123 where the :[num] defines BGRATE
 #BGRate_calc --coherent_peak 6 --beam_on_current 0.020 --beam_energy 11.6 --collimator_diameter 0.005 --radiator_thickness 50e-6 --endpoint_energy_low 5.5 --endpoint_energy_high 6 --collimator_distance 75 --nbins 500
 #Also see the calculational tool at http://zeus.phys.uconn.edu/halld/cobrems/ratetool.cgi
