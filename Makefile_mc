@@ -1,6 +1,6 @@
 include $(NPP)/config.mk
 
-all: check .sig_done .ps_done
+all: check run_sig_mc run_ps_mc
 
 check:
 	@echo checking if NPP agrees with config file
@@ -24,9 +24,9 @@ MC_ps.config: $(NPP)/MC_config/MC.config.template
 	> $@
 	rm MC.config.tmp
 
-.%_done: MC_%.config
-	gluex_MC.py $< $(RUN) $(EVENTS)
-	date > $@
+run_%_mc: MC_%.config
+	gluex_MC.py $< $(RUN) $(EVENTS) \
+	    batch=$(BATCH) base_file_number=$(BASE_FILE_NUMBER)
 
 clean:
 	$(RM) MC_*.config
