@@ -1,6 +1,8 @@
-number_of_events=1000
-mc_output_dir=/work/halld/home/marki/npp_output_test
-npp_elton_dir=/home/marki/npp_elton
+number_of_events=10000
+mc_output_dir=/work/halld/home/marki/npp_output
+npp_analysis_dir=/home/marki/npp_analysis
 run_number=30300
 generator_config_file_phase_space=gen_2pi0_primakoff_signal_sigma_flat.cfg
 generator_config_file_signal=gen_2pi0_primakoff_signal_sigma.cfg
+batch=0
+base_file_number=0

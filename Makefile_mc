@@ -1,15 +1,15 @@
 include $(NPP)/config.mk
 
-all: check .sig_done .ps_done
+all: check run_sig_mc run_ps_mc
 
 check:
 	@echo checking if NPP agrees with config file
-	@test $(NPP) = $(NPP_ELTON_DIR)
+	@test $(NPP) = $(NPP_ANALYSIS_DIR)
 
 MC_sig.config: $(NPP)/MC_config/MC.config.template
 	cp -v $< MC.config.tmp
 	sed s#\<tag\>#sig# MC.config.tmp \
-	| sed s#\<npp_elton_dir\>#$(NPP_ELTON_DIR)# \
+	| sed s#\<npp_analysis_dir\>#$(NPP_ANALYSIS_DIR)# \
 	| sed s#\<output_dir\>#$(MC_OUTPUT_DIR)# \
 	| sed s#\<generator_config_file\>#$(GEN_CFG_SIG)# \
 	> $@
@@ -18,15 +18,15 @@ MC_sig.config: $(NPP)/MC_config/MC.config.template
 MC_ps.config: $(NPP)/MC_config/MC.config.template
 	cp -v $< MC.config.tmp
 	sed s#\<tag\>#ps# MC.config.tmp \
-	| sed s#\<npp_elton_dir\>#$(NPP_ELTON_DIR)# \
+	| sed s#\<npp_analysis_dir\>#$(NPP_ANALYSIS_DIR)# \
 	| sed s#\<output_dir\>#$(MC_OUTPUT_DIR)# \
 	| sed s#\<generator_config_file\>#$(GEN_CFG_PS)# \
 	> $@
 	rm MC.config.tmp
 
-.%_done: MC_%.config
-	gluex_MC.py $< $(RUN) $(EVENTS)
-	date > $@
+run_%_mc: MC_%.config
+	gluex_MC.py $< $(RUN) $(EVENTS) \
+	    batch=$(BATCH) base_file_number=$(BASE_FILE_NUMBER)
 
 clean:
 	$(RM) MC_*.config
