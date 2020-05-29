@@ -21,7 +21,7 @@ source $NPP/setup
 ```
 mkdir -p /work/halld/username/npp_work
 cd /work/halld/username/npp_work
-cp $NPP/standard.nppcfg my.nppcfg
+cp $NPP/example.nppcfg my.nppcfg
 ```
 
 Edit my.nppcfg to indicate your preferences.
