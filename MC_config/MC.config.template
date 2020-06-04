@@ -51,7 +51,7 @@ CUSTOM_PLUGINS=file:<npp_analysis_dir>/originals/gen_2pi0_primakoff/jana_Z2pi_tr
 BATCH_SYSTEM=swif                          #can be swif or qsub
 
 #environment file location
-ENVIRONMENT_FILE=<npp_analysis_dir>/originals/home_elton/MC_environment.csh     #change this to your own environment file
+ENVIRONMENT_FILE=<environment_setup_file>     #change this to your own environment file
 
 WORKFLOW_NAME=workflow     #SWIF WORKFLOW NAME
 PROJECT = gluex            # http://scicomp.jlab.org/scicomp/#/projects

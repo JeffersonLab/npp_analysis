@@ -8,4 +8,4 @@ BATCH = $(shell $(NPP)/bin/extract_parameter.sh $(CONFIG) batch 0)
 BASE_FILE_NUMBER = $(shell $(NPP)/bin/extract_parameter.sh $(CONFIG) base_file_number 0)
 GENERATOR = $(shell $(NPP)/bin/extract_parameter.sh $(CONFIG) generator_program gen_2pi0_primakoff)
 GENERATOR_CONFIG_FILE = $(shell $(NPP)/bin/extract_parameter.sh $(CONFIG) generator_config_file gen_2pi0_primakoff)
-
+ENVIRONMENT_SETUP_FILE = $(shell $(NPP)/bin/extract_parameter.sh $(CONFIG) environment_setup_file $(NPP)/originals/home_elton/MC_environment.csh)

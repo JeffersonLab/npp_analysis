@@ -12,6 +12,7 @@ MC_sig.config: $(NPP)/MC_config/MC.config.template
 	| sed s#\<npp_analysis_dir\>#$(NPP_ANALYSIS_DIR)# \
 	| sed s#\<output_dir\>#$(MC_OUTPUT_DIR)# \
 	| sed s#\<generator_config_file\>#$(GEN_CFG_SIG)# \
+	| sed s#\<environment_setup_file\>#$(ENVIRONMENT_SETUP_FILE)# \
 	> $@
 	rm MC.config.tmp
 
@@ -21,6 +22,7 @@ MC_ps.config: $(NPP)/MC_config/MC.config.template
 	| sed s#\<npp_analysis_dir\>#$(NPP_ANALYSIS_DIR)# \
 	| sed s#\<output_dir\>#$(MC_OUTPUT_DIR)# \
 	| sed s#\<generator_config_file\>#$(GEN_CFG_PS)# \
+	| sed s#\<environment_setup_file\>#$(ENVIRONMENT_SETUP_FILE)# \
 	> $@
 	rm MC.config.tmp
 
@@ -31,6 +33,7 @@ MC_bggen.config: $(NPP)/MC_config/MC.config.template
 	| sed s#\<output_dir\>#$(MC_OUTPUT_DIR)# \
 	| sed s#\<generator\>#$(GENERATOR)# \
 	| sed s#\<generator_config_file\>#$(GENERATOR_CONFIG_FILE)# \
+	| sed s#\<environment_setup_file\>#$(ENVIRONMENT_SETUP_FILE)# \
 	> $@
 	rm MC.config.tmp
 
@@ -44,3 +47,4 @@ clean:
 show_variables:
 	@echo BATCH = $(BATCH)
 	@echo GENERATOR = $(GENERATOR)
+	@echo ENVIRONMENT_SETUP_FILE = $(ENVIRONMENT_SETUP_FILE) 

@@ -30,7 +30,7 @@ Edit my.nppcfg to indicate your preferences.
 * npp_analysis_dir: the directory defined as $NPP above
 * generator_config_file_phase_space: name of file in $NPP_gen_config for generating phase space events
 * generator_config_file_signal: name of file in $NPP/gen_config for generating signal events
-
+* environment_setup_file: file to use to setup the shell environment (default: $NPP/originals/home_elton/MC_environment.csh)
 ### 4) Generate the Monte Carlo
 
 ```
