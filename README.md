@@ -21,16 +21,19 @@ source $NPP/setup
 ```
 mkdir -p /work/halld/username/npp_work
 cd /work/halld/username/npp_work
-cp $NPP/standard.nppcfg my.nppcfg
+cp $NPP/example.nppcfg my.nppcfg
 ```
 
 Edit my.nppcfg to indicate your preferences.
 * number_of_events: number of events to generate for each of signal and phase space
-* mc_outout_dir: directory where MCwrapper should put its output
-* npp_analysis_dir: the directory defined as $NPP above
-* generator_config_file_phase_space: name of file in $NPP_gen_config for generating phase space events
-* generator_config_file_signal: name of file in $NPP/gen_config for generating signal events
+* mc_outout_dir: Directory where MCwrapper should put its output.
+* npp_analysis_dir: The directory defined as $NPP (see above).
+* generator_config_file_phase_space: Name of file in $NPP_gen_config for generating phase space events
+* generator_config_file_signal: Name of file in $NPP/gen_config for generating signal events.
+* batch: whether simulation should be run in batch (batch=1) or in interactive (batch=0) mode. (default: 0)
+* base_file_number: if simulation will produce multiple output files, the serial number of the first file. (default: 0).
 * environment_setup_file: file to use to setup the shell environment (default: $NPP/originals/home_elton/MC_environment.csh)
+
 ### 4) Generate the Monte Carlo
 
 ```
