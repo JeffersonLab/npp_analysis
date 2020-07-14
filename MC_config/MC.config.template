@@ -10,7 +10,7 @@ DATA_OUTPUT_BASE_DIR=<output_dir> #your desired output location
 NCORES=4      # Number of CPU threads to use or nodes:node-id:ppn or nodes:ppn depending on your system
  
 GENERATOR=<generator>    #or you may specifile file:/.../file-to-use
-GENERATOR_CONFIG=<generator_config_file>   #use full path, needed by SWIF
+GENERATOR_CONFIG=<npp_analysis_dir>/gen_config/<generator_config_file>   #use full path, needed by SWIF
 # For the osc use >scosg16 and /osgpool/halld/elton. Look under tbritton for examples
 # use command-line argument base_file_number=xx to file numbering at xx
 
