@@ -6,3 +6,4 @@ generator_config_file_phase_space=gen_2pi0_primakoff_signal_sigma_flat.cfg
 generator_config_file_signal=gen_2pi0_primakoff_signal_sigma.cfg
 batch=0
 base_file_number=0
+environment_setup_file=/home/marki/npp_analysis/setup.sh

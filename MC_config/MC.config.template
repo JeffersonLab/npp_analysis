@@ -9,7 +9,7 @@ DATA_OUTPUT_BASE_DIR=<output_dir> #your desired output location
 
 NCORES=4      # Number of CPU threads to use or nodes:node-id:ppn or nodes:ppn depending on your system
  
-GENERATOR=gen_2pi0_primakoff    #or you may specifile file:/.../file-to-use
+GENERATOR=<generator>    #or you may specifile file:/.../file-to-use
 GENERATOR_CONFIG=<npp_analysis_dir>/gen_config/<generator_config_file>   #use full path, needed by SWIF
 # For the osc use >scosg16 and /osgpool/halld/elton. Look under tbritton for examples
 # use command-line argument base_file_number=xx to file numbering at xx
@@ -51,7 +51,7 @@ CUSTOM_PLUGINS=file:<npp_analysis_dir>/originals/gen_2pi0_primakoff/jana_Z2pi_tr
 BATCH_SYSTEM=swif                          #can be swif or qsub
 
 #environment file location
-ENVIRONMENT_FILE=<npp_analysis_dir>/originals/home_elton/MC_environment.csh     #change this to your own environment file
+ENVIRONMENT_FILE=<environment_setup_file>     #change this to your own environment file
 
 WORKFLOW_NAME=workflow     #SWIF WORKFLOW NAME
 PROJECT = gluex            # http://scicomp.jlab.org/scicomp/#/projects
@@ -64,7 +64,7 @@ TRACK= simulation     	   # https://scicomp.jlab.org/docs/batch_job_tracks
 DISK=50GB            # Max Disk usage
 RAM=8GB            # Max RAM usage
 # TIMELIMIT=300minutes      # Max walltime.  This may be of the form xx:xx:xx depending on your system
-TIMELIMIT=30minutes      # Max walltime.  This may be of the form xx:xx:xx depending on your system
+TIMELIMIT=300minutes      # Max walltime.  This may be of the form xx:xx:xx depending on your system
 # OS=centos7        # Specify CentOS65 machines
 OS=centos77        # Specify CentOS65 machines
 # OS=general        # Specify CentOS65 machines

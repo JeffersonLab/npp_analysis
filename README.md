@@ -30,8 +30,9 @@ Edit my.nppcfg to indicate your preferences.
 * npp_analysis_dir: The directory defined as $NPP (see above).
 * generator_config_file_phase_space: Name of file in $NPP_gen_config for generating phase space events
 * generator_config_file_signal: Name of file in $NPP/gen_config for generating signal events.
-* batch: whether simulation should be run in batch (batch=1) or in interactive (batch=0) mode. Default is 0
-* base_file_number: if simulation will produce multiple output files, the serial number of the first file. Defalut is 0.
+* batch: Whether simulation should be run in batch (batch=1) or in interactive (batch=0) mode. (default: 0)
+* base_file_number: If simulation will produce multiple output files, the serial number of the first file. (default: 0).
+* environment_setup_file: File to use to setup the shell environment (default: $NPP/originals/home_elton/MC_environment.csh)
 
 ### 4) Generate the Monte Carlo
 
