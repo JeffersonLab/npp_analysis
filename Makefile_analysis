@@ -13,6 +13,7 @@ PHASE_SPACE_EVENT_MACROS = call_MakeAmpToolsFlat_mcthrown_pi0.C MakeAmpToolsFlat
 #MC_OUTPUT_DIR = ..
 INPUT_TREES_SIG = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_gen_2pi0_primakoff_sig_*$(RUN)_*.root)
 INPUT_TREES_PS = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_gen_2pi0_primakoff_ps_*$(RUN)_*.root)
+INPUT_TREES_BGGEN = $(wildcard $(MC_OUTPUT_DIR)/root/trees/tree_pi0pi0misspb208__B2_bggen_bggen_*$(RUN)_*.root)
 MC_HDDM_FILES = $(wildcard $(MC_OUTPUT_DIR)/hddm/dana_rest_gen_2pi0_primakoff_ps_*$(RUN)_*.hddm)
 TOTAL_EVENTS = $(EVENTS)
 PWD := $(shell pwd)
@@ -48,6 +49,11 @@ tree_pi0pi0misspb208_ps.root: $(INPUT_TREES_PS)
 	@echo Makefile_analysis info: hadd the trees for phase space
 	rm -fv $@
 	hadd $@ $(INPUT_TREES_PS)
+
+tree_pi0pi0misspb208_bggen.root: $(INPUT_TREES_BGGEN)
+	@echo Makefile_analysis info: hadd the trees for bggen
+	rm -fv $@
+	hadd $@ $(INPUT_TREES_BGGEN)
 
 %.C: $(NPP)/root_macros/%.C
 	cp -v $< $@
@@ -136,3 +142,6 @@ twopi_primakoff.pdf twopi_primakoff_sum.pdf: twopi_primakoff.root twopi_primakof
 #
 clean:
 	rm -fv *.pcm *.d *.so *.pdf *.root *.C *.h *.fit *.txt *.fit2
+
+show_env:
+	@echo CONFIG = $(CONFIG)

@@ -1,10 +1,14 @@
 include $(NPP)/config.mk
 
-all: check run_sig_mc run_ps_mc
+all: ask_for_target
+
+ask_for_target: check
+	@echo specify target: run_sig_mc, run_ps_mc, or run_bggen_mc
 
 check:
 	@echo checking if NPP agrees with config file $(CONFIG)
 	@test $(NPP) = $(NPP_ANALYSIS_DIR)
+	@echo NPP agrees with config file
 
 MC_sig.config: $(NPP)/MC_config/MC.config.template
 	cp -v $< MC.config.tmp
@@ -30,7 +34,7 @@ MC_ps.config: $(NPP)/MC_config/MC.config.template $(CONFIG)
 
 MC_bggen.config: $(NPP)/MC_config/MC.config.template $(CONFIG)
 	cp -v $< MC.config.tmp
-	sed s#\<tag\>#ps# MC.config.tmp \
+	sed s#\<tag\>#bggen# MC.config.tmp \
 	| sed s#\<npp_analysis_dir\>#$(NPP_ANALYSIS_DIR)# \
 	| sed s#\<output_dir\>#$(MC_OUTPUT_DIR)# \
 	| sed s#\<generator\>#$(GENERATOR)# \
