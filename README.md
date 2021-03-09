@@ -11,9 +11,17 @@ git clone https://github.com/jeffersonlab/npp_analysis
 
 ### 2) To setup the environment
 
+For tcsh:
+
 ```
 setenv NPP /home/username/npp_analysis
-source $NPP/setup
+source $NPP/setup.csh
+```
+For bash:
+
+```
+export NPP=/home/username/npp_analysis
+source $NPP/setup.sh
 ```
 
 ### 3) To configure the software
