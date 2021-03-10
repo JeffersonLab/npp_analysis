@@ -44,6 +44,8 @@ Edit my.nppcfg to indicate your preferences.
 
 ### 4) Generate the Monte Carlo
 
+Output goes to the directory named in the nppcfg file.
+
 #### For Amplitude Analysis
 
 Generate the signal:
@@ -68,17 +70,14 @@ cd /work/halld/username/npp_work
 make -f $NPP/Makefile_mc CONFIG=my.nppcfg run_bggen_mc
 ```
 
-Output goes to the directory named in the nppcfg file.
-
 ### 5) Analyze the Monte Carlo
+
+Output goes to the current working directory.
 
 ```
 cd /work/halld/username/npp_work
 make -f $NPP/Makefile_analysis CONFIG=my.nppcfg
 ```
-
-Output goes to the current working directory.
-
 ## Notes
 
 ### Original files come from:
