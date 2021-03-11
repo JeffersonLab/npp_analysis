@@ -11,9 +11,17 @@ git clone https://github.com/jeffersonlab/npp_analysis
 
 ### 2) To setup the environment
 
+For tcsh:
+
 ```
 setenv NPP /home/username/npp_analysis
-source $NPP/setup
+source $NPP/setup.csh
+```
+For bash:
+
+```
+export NPP=/home/username/npp_analysis
+source $NPP/setup.sh
 ```
 
 ### 3) To configure the software
@@ -36,21 +44,43 @@ Edit my.nppcfg to indicate your preferences.
 
 ### 4) Generate the Monte Carlo
 
-```
-cd /work/halld/username/npp_work
-make -f $NPP/Makefile_mc CONFIG=my.nppcfg
-```
-
 Output goes to the directory named in the nppcfg file.
 
+#### For Amplitude Analysis
+
+Generate the signal:
+
+```
+cd /work/halld/username/npp_work
+make -f $NPP/Makefile_mc CONFIG=my.nppcfg run_sig_mc
+```
+
+Generate phase space:
+
+```
+cd /work/halld/username/npp_work
+make -f $NPP/Makefile_mc CONFIG=my.nppcfg run_ps_mc
+```
+#### For Minimum-Bias Background
+
+Generate bggen background:
+
+```
+cd /work/halld/username/npp_work
+make -f $NPP/Makefile_mc CONFIG=my.nppcfg run_bggen_mc
+```
+
 ### 5) Analyze the Monte Carlo
+
+Output goes to the current working directory.
+
+For the amplitude analysis:
 
 ```
 cd /work/halld/username/npp_work
 make -f $NPP/Makefile_analysis CONFIG=my.nppcfg
 ```
-
-Output goes to the current working directory.
+For the bggen background analysis, instructions have not been written yet.
 
 ## Notes
 
