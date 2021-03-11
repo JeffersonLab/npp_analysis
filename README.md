@@ -74,10 +74,14 @@ make -f $NPP/Makefile_mc CONFIG=my.nppcfg run_bggen_mc
 
 Output goes to the current working directory.
 
+For the amplitude analysis:
+
 ```
 cd /work/halld/username/npp_work
 make -f $NPP/Makefile_analysis CONFIG=my.nppcfg
 ```
+For the bggen background analysis, instructions have not been written yet.
+
 ## Notes
 
 ### Original files come from:
